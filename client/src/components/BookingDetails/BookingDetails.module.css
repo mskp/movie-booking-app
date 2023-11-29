@@ -1,0 +1,57 @@
+.last_booked_section {
+  width: 20%;
+  padding: 0.62rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-left: 1px solid rgb(100 116 139);
+  border-bottom: 1px solid rgb(100 116 139);
+  border-bottom-left-radius: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border: none;
+  }
+}
+
+.movie_details {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.movie_details p span::after {
+  content: "\A";
+  white-space: pre;
+}
+
+.seat {
+  display: flex;
+  flex-direction: column;
+}
+
+.seat_count {
+  width: 3.5rem;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+  background-color: rgba(65, 65, 65, 0.5);
+  border: none;
+  border-radius: 0.5rem;
+  color: inherit;
+}
+
+.seats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+}

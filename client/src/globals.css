@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400");
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+body.dark-mode {
+  background-color: rgb(16, 17, 17);
+  color: rgb(255, 255, 255);
+}
+
+li {
+  list-style: none;
+}
+
+.logo {
+  font-family: "Nosifer", cursive;
+}
+
+.section_title {
+  letter-spacing: 0.1ch;
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+  background-color: rgb(33, 33, 33);
+  color: #fff;
+  border: 0.12rem solid rgb(80, 80, 80);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(49, 49, 49);
+  }
+}
