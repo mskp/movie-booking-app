@@ -1,6 +1,6 @@
 # CineCrux - Book Movie Tickets
 
-![Kwizie Logo](./client/public/logo128.png)
+![Kwizie Logo](https://cinecrux.vercel.app/logo128.png)
 
 ## Deployment URL
 
@@ -13,11 +13,11 @@ A sleek and responsive Movie Booking App built with the MERN stack technology. T
 
 ### Large Device
 
-![large-device](./client/public/large-device.png)
+![large-device](https://cinecrux.vercel.app/large-device.png)
 
 ### Small Device
 
-<img src="./client/public/small-device.png" alt="Home" height="500">
+<img src="https://cinecrux.vercel.app/small-device.png" alt="Home" height="500">
 
 ## Features:
 
