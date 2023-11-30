@@ -9,8 +9,8 @@ import Seats from "./Seats";
 // Define the BookTicket component
 export default function BookTicket({ setBookedMovieDetails }) {
   // State to manage movie name, selected time, and seat selections
-  const [movieName, setMovieName] = useState("");
-  const [time, setTime] = useState("");
+  const [movie, setMovie] = useState("");
+  const [slot, setSlot] = useState("");
   const [seats, setSeats] = useState({
     A1: 0,
     A2: 0,
@@ -34,8 +34,8 @@ export default function BookTicket({ setBookedMovieDetails }) {
 
   // Function to reset all states to their initial values
   const resetStates = () => {
-    setMovieName("");
-    setTime("");
+    setMovie("");
+    setSlot("");
     setSeats({
       A1: 0,
       A2: 0,
@@ -51,7 +51,7 @@ export default function BookTicket({ setBookedMovieDetails }) {
     e.preventDefault();
 
     // Validate movie details before proceeding
-    const validationError = validateMovieDetails(movieName, time, seats);
+    const validationError = validateMovieDetails(movie, slot, seats);
 
     // Display an error toast if validation fails
     if (validationError)
@@ -59,7 +59,7 @@ export default function BookTicket({ setBookedMovieDetails }) {
 
     try {
       // Prepare booking details
-      const bookingDetails = { movieName, time, seats };
+      const bookingDetails = { movie, slot, seats };
 
       // Make a POST request to the server to book the movie
       const response = await fetch(
@@ -72,20 +72,21 @@ export default function BookTicket({ setBookedMovieDetails }) {
           },
         }
       );
+      console.log(bookingDetails)
 
       // If the booking is successful, update state and show success toast
       if (response.ok) {
-        toast.success(`${movieName} booked successfully`, { id: "movie-booking-toast" });
+        toast.success(`${movie} booked successfully`, { id: "movie-booking-toast" });
         // Store booked details in local storage
         setBookedMovieDetails(bookingDetails);
         // Reset states for the next booking
         resetStates();
       } else {
+        console.log(response)
         throw new Error("Movie Booking Failed");
       }
     } catch (error) {
       // Display an error toast if the booking process fails
-      console.log(error)
       toast.error(error.message, { id: "movie-booking-toast" });
     }
   };
@@ -100,8 +101,8 @@ export default function BookTicket({ setBookedMovieDetails }) {
         styles={styles}
         title="Movies"
         items={availableMovies}
-        selectedItem={movieName}
-        onSelect={setMovieName}
+        selectedItem={movie}
+        onSelect={setMovie}
       />
 
       {/* Time Slots Section */}
@@ -109,10 +110,10 @@ export default function BookTicket({ setBookedMovieDetails }) {
         styles={styles}
         title="Time Slots"
         items={availableTimeSlots}
-        selectedItem={time}
-        onSelect={setTime}
+        selectedItem={slot}
+        onSelect={setSlot}
       />
-      
+
       {/* Seats Section */}
       <Seats
         handleSeatChange={handleSeatChange}

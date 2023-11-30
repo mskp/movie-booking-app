@@ -4,10 +4,10 @@
 
 export default function validateBookingData(req, res, next) {
     // Destructuring the movieName, time, and seats from the request body.
-    const { movieName, time, seats } = req.body;
-
+    const { movie, slot, seats } = req.body;
+    console.log(req.body)
     // Checking if any of the required fields (movieName, time, seats) is missing.
-    if (!movieName || !time || !seats) {
+    if (!movie || !slot || !seats) {
         // If any of the fields is missing, send a 400 Bad Request response with an error message.
         return res.status(400).json({
             error: "All fields (movieName, time, seats) are required."

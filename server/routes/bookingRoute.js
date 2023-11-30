@@ -13,7 +13,7 @@ router.route("/")
     try {
       const bookingDetails = await Booking.findOne()
         .sort({ createdAt: -1 }) // Fetch the latest booking
-        .select({ movieName: 1, time: 1, seats: 1 }); // Select the required fields to be fetched
+        .select({ _id: 0, movie: 1, slot: 1, seats: 1 }); // Select the required fields to be fetched
 
       if (bookingDetails) {
         // Respond with booking details if found
@@ -32,10 +32,10 @@ router.route("/")
   .post(validateBookingData, async (req, res) => {
     try {
       // Fetch the required details from the JSON body
-      const { movieName, time, seats } = req.body;
+      const { movie, slot, seats } = req.body;
       
       // Create a new Booking object
-      const booking = new Booking({ movieName, time, seats });
+      const booking = new Booking({ movie, slot, seats });
 
       // Save the booking details into the database
       await booking.save();

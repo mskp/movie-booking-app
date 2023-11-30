@@ -16,13 +16,13 @@ export default function BookingDetails({ bookedMovieDetails }) {
           {/* Display the movie name */}
           <p>
             <span className={styles.title}>Movie</span>
-            <span className={styles.detail}>{bookedMovieDetails.movieName}</span>
+            <span className={styles.detail}>{bookedMovieDetails.movie}</span>
           </p>
 
           {/* Display the booking time */}
           <p>
             <span className={styles.title}>Time</span>
-            <span className={styles.detail}>{bookedMovieDetails.time}</span>
+            <span className={styles.detail}>{bookedMovieDetails.slot}</span>
           </p>
 
           {/* Display the booked seats */}

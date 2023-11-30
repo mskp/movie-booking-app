@@ -4,8 +4,8 @@ import { Schema, model } from "mongoose";
 // Define the schema for the Booking model
 const BookingSchema = new Schema(
   {
-    movieName: String,  // Name of the movie for the booking
-    time: String,       // Time of the movie show
+    movie: String,  // Name of the movie for the booking
+    slot: String,       // Time of the movie show
     seats: {
       A1: Number,
       A2: Number,
@@ -25,7 +25,7 @@ const BookingSchema = new Schema(
       {
         validator: function () {
           // Check if at least one seat has a value other than 0
-          return Object.values(this.seats).some(seat => seat !== 0);
+          return Object.values(this.seats).some(seat => seat !== 0 && seat !== "");
         },
         message: "At least one seat must have a value other than 0",
       },
