@@ -9,7 +9,7 @@ export default function validateBookingData(req, res, next) {
     if (!movie || !slot || !seats) {
         // If any of the fields is missing, send a 400 Bad Request response with an error message.
         return res.status(400).json({
-            error: "All fields (movieName, time, seats) are required."
+            error: "All fields (movie, slot, seats) are required."
         });
     }
 
