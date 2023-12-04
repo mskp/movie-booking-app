@@ -4,6 +4,8 @@ import BookTicket from "./components/BookTicket"; // Import BookTicket Component
 import BookingDetails from "./components/BookingDetails"; // Import BookingDetails Component
 import useLocalStorage from "./hook"; // Import custom hook
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL ?? "http://127.0.0.1:8000";
+
 // Define the main App component
 export default function App() {
   // Use the custom hook for local storage
@@ -13,7 +15,7 @@ export default function App() {
   const fetchLastBookedMovie = useCallback(async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/api/booking`
+        `${SERVER_URL}/api/booking`
       );
       if (response.ok) {
         // If the response is successful, parse the data and update the state
@@ -40,7 +42,7 @@ export default function App() {
       <Header />
       <main>
         {/* Render the BookTicket and BookingDetails components */}
-        <BookTicket setBookedMovieDetails={setBookedMovieDetails} />
+        <BookTicket setBookedMovieDetails={setBookedMovieDetails} SERVER_URL={SERVER_URL} />
         <BookingDetails bookedMovieDetails={bookedMovieDetails} />
       </main>
     </>

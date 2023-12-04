@@ -7,7 +7,7 @@ import SelectableList from "./SelectableList";
 import Seats from "./Seats";
 
 // Define the BookTicket component
-export default function BookTicket({ setBookedMovieDetails }) {
+export default function BookTicket({ setBookedMovieDetails, SERVER_URL }) {
   // State to manage movie name, selected time, and seat selections
   const [movie, setMovie] = useState("");
   const [slot, setSlot] = useState("");
@@ -63,7 +63,7 @@ export default function BookTicket({ setBookedMovieDetails }) {
 
       // Make a POST request to the server to book the movie
       const response = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/api/booking`,
+        `${SERVER_URL}/api/booking`,
         {
           method: "POST",
           body: JSON.stringify(bookingDetails),
@@ -72,7 +72,6 @@ export default function BookTicket({ setBookedMovieDetails }) {
           },
         }
       );
-      console.log(bookingDetails)
 
       // If the booking is successful, update state and show success toast
       if (response.ok) {
@@ -82,7 +81,6 @@ export default function BookTicket({ setBookedMovieDetails }) {
         // Reset states for the next booking
         resetStates();
       } else {
-        console.log(response)
         throw new Error("Movie Booking Failed");
       }
     } catch (error) {
