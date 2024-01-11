@@ -4,8 +4,8 @@
 
 ## Deployment URL
 
-- **Front-End: [https://cinecrux.vercel.app](https://cinecrux.vercel.app)**
-- **Back-End: [https://cinecrux-api.vercel.app](https://cinecrux-api.vercel.app)**
+- **Front-End: [https://cinecrux.sushant.fun](https://cinecrux.sushant.fun)**
+- **Back-End: [https://cinecrux-api.sushant.fun](https://cinecrux-api.sushant.fun)**
 
 A sleek and responsive Movie Booking App built with the MERN stack technology. This app seamlessly integrates MongoDB, Express.js, React.js, and Node.js, providing users with an efficient movie booking experience. With a user-friendly interface in React, users can easily browse, select, and book their preferred movies. The app uses MongoDB for data storage, ensuring a streamlined process. Leveraging Express.js and Node.js, it enables seamless communication between the front and back end. The last booked movie is displayed prominently, offering users a quick reference.
 
@@ -13,11 +13,11 @@ A sleek and responsive Movie Booking App built with the MERN stack technology. T
 
 ### Large Device
 
-![large-device](https://cinecrux.vercel.app/large-device.png)
+![large-device](https://cinecrux.sushant.fun/large-device.png)
 
 ### Small Device
 
-<img src="https://cinecrux.vercel.app/small-device.png" alt="Home" height="500">
+<img src="https://cinecrux.sushant.fun/small-device.png" alt="Home" height="500">
 
 ## Features:
 
