@@ -82,7 +82,7 @@ Explore the API endpoints and understand how to interact with the CineCrux backe
 
 - **Name:** Sushant Pandey
 - **GitHub:** [https://github.com/mskp](https://github.com/mskp)
-- **LinkedIn:** [https://www.linkedin.com/in/sushaantkp/](https://www.linkedin.com/in/sushaantkp/)
+- **LinkedIn:** [https://www.linkedin.com/in/mskp](https://www.linkedin.com/in/mskp)
 - **Email:** sushhantpandey@gmail.com
 
 ## License
