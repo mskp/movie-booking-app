@@ -15,6 +15,13 @@ export default function SelectableList({ styles, title, items, selectedItem, onS
                         className={`${styles.item} 
                         ${selectedItem === item ? styles.selected : ''}`}
                         onClick={() => onSelect(item)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                onSelect(item);
+                            }
+                        }}
+                        tabIndex={0}
+                        aria-current={selectedItem === item ? 'true' : 'false'}
                     >
                         {/* Display the item's name */}
                         <p>{item}</p>

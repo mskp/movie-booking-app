@@ -51,6 +51,10 @@
   &.selected:hover {
     opacity: .7;
   }
+
+  &:focus-visible {
+    border: .2rem solid rgb(89, 66, 143);
+  }
 }
 
 .seat_input {
@@ -72,6 +76,10 @@
   border: none;
   border-radius: 0.5rem;
   color: inherit;
+
+  &:focus-visible {
+    border: .2rem solid rgb(89, 66, 143);
+  }  
 }
 
 .seat {
